@@ -64,7 +64,7 @@ public class Tableaux {
             if (tab[i] > tab[index])
                 index = i;
         }
-        return index;
+        return tab[index];
     }
     public static int minimum(int[] tab){
         int index = 0;
@@ -72,11 +72,11 @@ public class Tableaux {
             if (tab[i] < tab[index])
                 index = i;
         }
-        return index;
+        return tab[index];
     }
 
-    public static int moyenne(int[] tab){
-        int i = 0;
+    public static double moyenne(int[] tab){
+        double i = 0;
         for (int elem : tab)
             i+=elem;
         try {
@@ -85,6 +85,75 @@ public class Tableaux {
         catch (ArithmeticException e){
 
         }
+        return i;
+    }
+
+    public static int fouilleSeq(int[] tab, int elem){
+        int i = 0;
+        while (i < tab.length && tab[i] != elem){
+            i++;
+        }
+        if (i == tab.length)
+            i = -1;
+        return i;
+    }
+
+    public static void triDecroissantSSS(String[] tab){
+        int imin;
+        for (int i=0; i<tab.length-1; i++){
+            imin = i;
+            for (int j=i+1; j<tab.length; j++){
+                if (Integer.parseInt(tab[j]) > Integer.parseInt(tab[imin]))
+                    imin = j;
+            }
+            if (imin != i)
+                permute(tab, i, imin);
+        }
+    }
+
+    public static void print(String[] tab){
+        for(String elem : tab)
+            System.out.println(elem);
+    }
+
+    public static int maximum(String[] tab){
+        int index = 0;
+        for(int i = 1; i < tab.length; i++){
+            if (Integer.parseInt(tab[i]) > Integer.parseInt(tab[index]))
+                index = i;
+        }
+        return Integer.parseInt(tab[index]);
+    }
+
+    public static int minimum(String[] tab){
+        int index = 0;
+        for(int i = 1; i < tab.length; i++){
+            if (Integer.parseInt(tab[i]) < Integer.parseInt(tab[index]))
+                index = i;
+        }
+        return Integer.parseInt(tab[index]);
+    }
+
+    public static double moyenne(String[] tab){
+        double i = 0;
+        for (String elem : tab)
+            i+=Integer.parseInt(elem);
+        try {
+            i/=tab.length;
+        }
+        catch (ArithmeticException e){
+
+        }
+        return i;
+    }
+
+    public static int fouilleSeq(String[] tab, String elem){
+        int i = 0;
+        while (i < tab.length && tab[i].equals(elem)){
+            i++;
+        }
+        if (i == tab.length)
+            i = -1;
         return i;
     }
 
