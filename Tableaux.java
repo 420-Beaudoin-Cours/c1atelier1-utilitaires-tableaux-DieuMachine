@@ -59,20 +59,20 @@ public class Tableaux {
     }
 
     public static int maximum(int[] tab){
-        int index = 0;
+        int iMax = 0;
         for(int i = 1; i < tab.length; i++){
-            if (tab[i] > tab[index])
-                index = i;
+            if (tab[i] > tab[iMax])
+                iMax = i;
         }
-        return tab[index];
+        return tab[iMax];
     }
     public static int minimum(int[] tab){
-        int index = 0;
+        int iMin = 0;
         for(int i = 1; i < tab.length; i++){
-            if (tab[i] < tab[index])
-                index = i;
+            if (tab[i] < tab[iMin])
+                iMin = i;
         }
-        return tab[index];
+        return tab[iMin];
     }
 
     public static double moyenne(int[] tab){
@@ -117,21 +117,21 @@ public class Tableaux {
     }
 
     public static int maximum(String[] tab){
-        int index = 0;
+        int iMax = 0;
         for(int i = 1; i < tab.length; i++){
-            if (Integer.parseInt(tab[i]) > Integer.parseInt(tab[index]))
-                index = i;
+            if (Integer.parseInt(tab[i]) > Integer.parseInt(tab[iMax]))
+                iMax = i;
         }
-        return Integer.parseInt(tab[index]);
+        return Integer.parseInt(tab[iMax]);
     }
 
     public static int minimum(String[] tab){
-        int index = 0;
+        int iMin = 0;
         for(int i = 1; i < tab.length; i++){
-            if (Integer.parseInt(tab[i]) < Integer.parseInt(tab[index]))
-                index = i;
+            if (Integer.parseInt(tab[i]) < Integer.parseInt(tab[iMin]))
+                iMin = i;
         }
-        return Integer.parseInt(tab[index]);
+        return Integer.parseInt(tab[iMin]);
     }
 
     public static double moyenne(String[] tab){
