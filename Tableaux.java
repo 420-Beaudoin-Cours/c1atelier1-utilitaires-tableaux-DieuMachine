@@ -59,20 +59,20 @@ public class Tableaux {
     }
 
     public static int maximum(int[] tab){
-        int iMax = 0;
+        int index = 0;
         for(int i = 1; i < tab.length; i++){
-            if (tab[i] > tab[iMax])
-                iMax = i;
+            if (tab[i] > tab[index])
+                index = i;
         }
-        return tab[iMax];
+        return tab[index];
     }
     public static int minimum(int[] tab){
-        int iMin = 0;
+        int index = 0;
         for(int i = 1; i < tab.length; i++){
-            if (tab[i] < tab[iMin])
-                iMin = i;
+            if (tab[i] < tab[index])
+                index = i;
         }
-        return tab[iMin];
+        return tab[index];
     }
 
     public static double moyenne(int[] tab){
@@ -149,7 +149,7 @@ public class Tableaux {
 
     public static int fouilleSeq(String[] tab, String elem){
         int i = 0;
-        while (i < tab.length && tab[i].equals(elem)){
+        while (i < tab.length && !tab[i].equals(elem)){
             i++;
         }
         if (i == tab.length)
