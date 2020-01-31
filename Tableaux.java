@@ -77,13 +77,10 @@ public class Tableaux {
 
     public static double moyenne(int[] tab){
         double i = 0;
-        for (int elem : tab)
-            i+=elem;
-        try {
-            i/=tab.length;
-        }
-        catch (ArithmeticException e){
-
+        if (tab.length > 0) {
+            for (int elem : tab)
+                i += elem;
+            i /= tab.length;
         }
         return i;
     }
@@ -136,13 +133,10 @@ public class Tableaux {
 
     public static double moyenne(String[] tab){
         double i = 0;
-        for (String elem : tab)
-            i+=Integer.parseInt(elem);
-        try {
-            i/=tab.length;
-        }
-        catch (ArithmeticException e){
-
+        if (tab.length > 0) {
+            for (String elem : tab)
+                i += Integer.parseInt(elem);
+            i /= tab.length;
         }
         return i;
     }

@@ -49,6 +49,11 @@ public class TableauxTest {
         double expectedResult = 15.8;
         double result = Tableaux.moyenne(tab);
         assertEquals(expectedResult, result, 0);
+
+        tab = new int[0];
+        expectedResult = 0;
+        result = Tableaux.moyenne(tab);
+        assertEquals(expectedResult, result, 0);
     }
 
     @Test
@@ -56,6 +61,10 @@ public class TableauxTest {
         int[] tab = {20, 10, 0, -1, 50};
         int expectedResult = 1;
         int result = Tableaux.fouilleSeq(tab, 10);
+        assertEquals(expectedResult, result);
+
+        expectedResult = -1;
+        result = Tableaux.fouilleSeq(tab, 11);
         assertEquals(expectedResult, result);
     }
 
@@ -89,6 +98,11 @@ public class TableauxTest {
         double expectedResult = 15.8;
         double result = Tableaux.moyenne(tab);
         assertEquals(expectedResult, result, 0);
+
+        tab = new String[0];
+        expectedResult = 0;
+        result = Tableaux.moyenne(tab);
+        assertEquals(expectedResult, result, 0);
     }
 
     @Test
@@ -96,6 +110,10 @@ public class TableauxTest {
         String[] tab = {"20", "10", "0", "-1", "50"};
         int expectedResult = 1;
         int result = Tableaux.fouilleSeq(tab, "10");
+        assertEquals(expectedResult, result);
+
+        expectedResult = -1;
+        result = Tableaux.fouilleSeq(tab, "11");
         assertEquals(expectedResult, result);
     }
 }
